@@ -12,9 +12,8 @@ namespace WordPressUWP.Helpers
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if (value is Post)
+            if (value is Post post)
             {
-                var post = (Post)value;
                 return HtmlTools.WrapContent(post);
             }
             return String.Empty;

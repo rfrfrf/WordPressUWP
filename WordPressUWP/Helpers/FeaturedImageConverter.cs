@@ -10,9 +10,8 @@ namespace WordPressUWP.Helpers
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if (value is Embedded)
+            if (value is Embedded p)
             {
-                var p = (Embedded)value;
                 if(p.WpFeaturedmedia != null)
                 {
                     var l = new List<MediaItem>(p.WpFeaturedmedia);
