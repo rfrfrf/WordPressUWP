@@ -63,7 +63,7 @@
 
         <Grid
             x:Name="MasterArea"
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
+            Background="{ThemeResource SystemControlAcrylicWindowBrush}"
             Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition x:Name="MasterRow" Height="48"/>
@@ -133,8 +133,9 @@
                   x:Name="CommentsColumn"
                   Width="400"
                   Margin="0"
+                  Background="{ThemeResource SystemControlAcrylicWindowBrush}"
                   >
-                <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+                <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
@@ -223,6 +224,7 @@
                         <AdaptiveTrigger MinWindowWidth="640"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
+                        <Setter Target="CommentsColumn.Background" Value="{ThemeResource SystemControlChromeLowAcrylicElementBrush}"/>
                         <Setter Target="MasterColumn.Width" Value="350" />
                         <Setter Target="CommentsColumn.Margin" Value="0 0 -400 0"/>
                     </VisualState.Setters>

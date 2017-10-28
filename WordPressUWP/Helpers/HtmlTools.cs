@@ -62,7 +62,7 @@ namespace WordPressUWP.Helpers
             var images = new List<MediaItem>(post.Embedded.WpFeaturedmedia);
 
             var img = images[0];
-            var imgSrc = img.SourceUrl;
+            var imgSrc = ToAbsolutePath(img.SourceUrl);
 
             var sb = new StringBuilder();
             sb.Append("<img class=\"alignnone size-full\" ");
@@ -78,6 +78,16 @@ namespace WordPressUWP.Helpers
             sb.Append($"sizes =\"(max-width: {img.MediaDetails.Width}px) 100vw, {img.MediaDetails.Width}px\" />");
 
             return sb.ToString();
+        }
+
+        public static string ToAbsolutePath(string uri)
+        {
+            if (!uri.StartsWith("http"))
+            {
+                uri = ApiCredentials.BaseUri.TrimEnd('/') + "/" + uri.TrimStart('/');
+            }
+            return uri;
+                
         }
     }
 }

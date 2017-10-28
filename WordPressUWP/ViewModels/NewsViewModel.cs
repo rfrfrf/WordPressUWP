@@ -109,7 +109,7 @@ namespace WordPressUWP.ViewModels
         {
             dataTransferManager = DataTransferManager.GetForCurrentView();
             dataTransferManager.DataRequested += DataTransferManager_DataRequested;
-            await LoadDataAsync(currentState);
+            LoadDataAsync(currentState);
         }
 
         private async Task GetComments(int postid)
@@ -149,13 +149,12 @@ namespace WordPressUWP.ViewModels
             }
         }
 
-        public async Task LoadDataAsync(VisualState currentState)
+        public void LoadDataAsync(VisualState currentState)
         {
             _currentState = currentState;
 
             if(Posts == null)
                 Posts = new IncrementalLoadingCollection<PostsService, Post>();
-
         }
 
         private void OnStateChanged(VisualStateChangedEventArgs args)

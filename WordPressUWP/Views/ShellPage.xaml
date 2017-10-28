@@ -107,7 +107,7 @@
             ItemsSource="{x:Bind ViewModel.PrimaryItems}"
             OptionsItemTemplate="{StaticResource NavigationMenuItemDataTemplate}"
             OptionsItemsSource="{x:Bind ViewModel.SecondaryItems}"
-            PaneBackground="{ThemeResource SystemControlBackgroundAltHighBrush}"
+            PaneBackground="{ThemeResource SystemControlChromeHighAcrylicWindowMediumBrush}"
             PaneForeground="{ThemeResource SystemControlForegroundBaseHighBrush}"
             >
             <i:Interaction.Behaviors>
@@ -125,11 +125,8 @@
         <Popup x:Name="LoginPopup"
                IsOpen="{x:Bind ViewModel.IsLoginPopupOpen, Mode=TwoWay}"
                IsLightDismissEnabled="False">
-            <Grid x:Name="LoginPopupWrapper">
-                <Grid.Background>
-                    <SolidColorBrush Color="{ThemeResource SystemAltHighColor}" Opacity="0.8"/>
-                </Grid.Background>
-                <Grid x:Name="LoginPopupGrid" Background="{ThemeResource SystemControlBackgroundAltHighBrush}" Padding="48">
+            <Grid x:Name="LoginPopupWrapper" Background="{ThemeResource SystemControlChromeHighAcrylicElementMediumBrush}">
+                <Grid x:Name="LoginPopupGrid" Background="{ThemeResource SystemControlAcrylicElementBrush}" Padding="48">
                     <StackPanel x:Name="NotLoggedInSP"
                                     VerticalAlignment="Top"
                                     HorizontalAlignment="Stretch"
@@ -147,7 +144,7 @@
                                          Header="[Password]"
                                          PlaceholderText="[Password]"
                                          HorizontalAlignment="Stretch"
-                                         IsPasswordRevealButtonEnabled="True"
+                                         PasswordRevealMode="Visible"
                                          KeyDown="PasswordTbx_KeyDown"
                                          Margin="0 0 0 12"/>
                         <StackPanel Orientation="Horizontal">

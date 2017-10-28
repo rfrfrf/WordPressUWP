@@ -168,7 +168,7 @@ namespace WordPressUWP.ViewModels
             }
         }
 
-        public async void Initialize(Frame frame)
+        public void Initialize(Frame frame)
         {
             NavigationService.Frame = frame;
             NavigationService.Navigated += Frame_Navigated;
@@ -275,7 +275,7 @@ namespace WordPressUWP.ViewModels
             }
         }
 
-        private async void Navigate(object item)
+        private void Navigate(object item)
         {
             var navigationItem = item as ShellNavigationItem;
             if (navigationItem != null)

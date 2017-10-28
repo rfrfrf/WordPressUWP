@@ -18,7 +18,8 @@ namespace WordPressUWP.Helpers
                     var l = new List<MediaItem>(p.WpFeaturedmedia);
                     if(l.Count > 0)
                     {
-                        return l.First().SourceUrl;
+                        var url = HtmlTools.ToAbsolutePath(l.First().SourceUrl);
+                        return url;
                     }
                 }
 
