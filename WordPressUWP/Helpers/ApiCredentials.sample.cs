@@ -5,6 +5,6 @@
     public static class ApiCredentialsSample
     {
         public const string BaseUri = "http://yoursite.com/";
-        public static string WordPressUri = "http://yoursite.com/wp-json/";
+        public const string WordPressUri = "http://yoursite.com/wp-json/";
     }
 }
