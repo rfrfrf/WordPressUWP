@@ -104,7 +104,7 @@ namespace WordPressUWP.Services
 
         private IEnumerable<ActivationHandler> GetActivationHandlers()
         {
-            yield return Singleton<LiveTileService>.Instance;
+            //yield return Singleton<LiveTileService>.Instance;
             yield return Singleton<HubNotificationsService>.Instance;
             yield return Singleton<SuspendAndResumeService>.Instance;
         }
